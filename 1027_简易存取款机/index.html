@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let isGo = true;
+      let money = 5000;
+      while (isGo == true) {
+        let choose = +prompt("1.存钱 2.取钱 3.查看余额 4.退出");
+        if (choose !== NaN) {
+          switch (choose) {
+            case 1:
+              money += +prompt("请输入要存的金额：");
+              break;
+            case 2:
+              money -= +prompt("请输入要取的金额：");
+              break;
+            case 3:
+              alert(`余额为：${money}`);
+              break;
+            case 4:
+              alert("正在退出......");
+              isGo = false;
+              break;
+            default:
+              alert("输入数字错误！");
+          }
+        } else {
+          alert("输入数字错误！");
+        }
+      }
+    </script>
+  </body>
+</html>

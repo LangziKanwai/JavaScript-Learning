@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        width: 100px;
+        height: 20px;
+        display: inline-block;
+        padding: 5px 10px;
+        text-align: center;
+        border: 1px solid #000;
+        margin: 2px;
+        box-shadow: 2px 2px #ffc0cbb1;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 循环打印 * 号
+      for (let i = 1; i <= 5; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write("<span>*</span>");
+        }
+        document.write("<br>");
+      }
+
+      document.write("<hr>");
+
+      // 九九乘法表
+      for (let i = 1; i <= 9; i++) {
+        for (let j = 1; j <= i; j++) {
+          document.write(`<span>${i} * ${j} = ${i * j}</span>`);
+        }
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>
