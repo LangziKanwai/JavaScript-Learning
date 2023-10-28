@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 700px;
+        height: 300px;
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+        margin: 100px auto;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      .box > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50px;
+        background-color: pink;
+        text-align: center;
+      }
+
+      .box div span {
+        margin-top: -20px;
+      }
+
+      .box div h4 {
+        margin-bottom: -24px;
+        margin-left: -10px;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      for (let i = 1; i <= 4; i++) {
+        arr.push(+prompt(`请输入第${i}季度的数据：`));
+      }
+
+      // 盒子开头
+      document.write(`<div class="box">`);
+
+      // 盒子内容
+      for (let i = 0; i <= 3; i++) {
+        document.write(`
+        <div style="height: ${arr[i]}px">
+        <span>${arr[i]}</span>
+        <h4>第${i + 1}季度</h4>
+        </div>
+      `);
+      }
+
+      // 盒子结尾
+      document.write(`</div>`);
+    </script>
+  </body>
+</html>

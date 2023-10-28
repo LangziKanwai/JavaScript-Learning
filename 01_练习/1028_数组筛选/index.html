@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [2, 0, 6, 1, 11, 77, 0, 25, 62, 75];
+      let newArr = [];
+      for (i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+          newArr.push(arr[i]);
+        } else {
+          // 删除最后一个元素
+          arr.pop();
+          // 删除第一个元素
+          arr.shift();
+          // 删除指定元素 （起始位置，删除几个元素）
+          arr.splice(i, 1);
+        }
+      }
+      console.log(newArr);
+    </script>
+  </body>
+</html>
