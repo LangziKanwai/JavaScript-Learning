@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 求任意数组的最值，并且计算总和，返回总和
+      function getArr(arr = []) {
+        let max = arr[0];
+        let min = arr[0];
+        let sum = 0;
+        for (let i = 1; i <= arr.length - 1; i++) {
+          if (arr[i] > max) {
+            max = arr[i];
+          }
+          if (arr[i] < min) {
+            min = arr[i];
+          }
+          sum += arr[i];
+        }
+        return [max, min, sum];
+      }
+      let arr = [5, 10, 6, 70, 20, 154, 13];
+      let newArr = getArr(arr);
+      document.write(`数组最大值为：${newArr[0]}` + "<br>");
+      document.write(`数组最小值为：${newArr[1]}` + "<br>");
+      document.write(`数组总和值为：${newArr[2]}` + "<br>");
+    </script>
+  </body>
+</html>
