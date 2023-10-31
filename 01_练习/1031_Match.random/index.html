@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let M, N;
+
+      // [0,1) 之间的随机数
+      console.log(Math.random());
+
+      // [0,11) 获取后向下取整，范围固定在 [0,10] 的整数
+      console.log(Math.floor(Math.random() * (10 + 1)));
+
+      // [0,3]
+      console.log(Math.floor(Math.random() * 4));
+
+      // [N,M]
+      console.log(Math.floor(Math.random() * (M - N + 1) + N));
+
+      // 封装函数
+      function getRandom(N, M) {
+        return Math.floor(Math.random() * (M - N + 1) + N);
+      }
+
+      console.log(getRandom(8, 80));
+    </script>
+  </body>
+</html>

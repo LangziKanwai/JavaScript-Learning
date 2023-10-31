@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let obj = {
+        uname: "张三",
+        age: "20",
+        // 方法
+        hobby: function () {
+          document.write("爱好列表");
+        },
+
+        getSum: function (num1, num2) {
+          let sum = num1 + num2;
+          return sum;
+        },
+      };
+
+      // 调用对象内方法
+      obj.getSum(x, y);
+    </script>
+  </body>
+</html>

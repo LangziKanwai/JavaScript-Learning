@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        { name: "zhang", age: "20", gender: "男", hometown: "河北省" },
+        { name: "lisi", age: "19", gender: "女", hometown: "安徽省" },
+        { name: "wangwu", age: "20", gender: "男", hometown: "浙江省" },
+      ];
+
+      for (let i = 0; i < students.length; i++) {
+        for (let k in students[i]) {
+          console.log(k);
+          console.log(students[i][k]);
+        }
+      }
+    </script>
+  </body>
+</html>

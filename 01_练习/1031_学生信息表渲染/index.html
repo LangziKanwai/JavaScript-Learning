@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 600px;
+        text-align: center;
+        margin: 200px auto;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+
+      caption {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      tr {
+        height: 40px;
+        cursor: pointer;
+      }
+
+      table tr:nth-child(1) {
+        background-color: #ddd;
+      }
+
+      table tr:not(:first-child):hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <caption>
+        学生列表
+      </caption>
+      <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>家乡</th>
+      </tr>
+      <script>
+        // 数据准备
+        let students = [
+          { name: "张三", age: "20", gender: "男", hometown: "河北省" },
+          { name: "李四", age: "19", gender: "女", hometown: "安徽省" },
+          { name: "王五", age: "20", gender: "男", hometown: "浙江省" },
+        ];
+
+        // 渲染页面
+        for (let i = 0; i < students.length; i++) {
+          document.write(`      
+          <tr>
+          <td>${i + 1}</td>
+          <td>${students[i].name}</td>
+          <td>${students[i].age}</td>
+          <td>${students[i].gender}</td>
+          <td>${students[i].hometown}</td>
+          </tr>`);
+        }
+      </script>
+    </table>
+  </body>
+</html>
