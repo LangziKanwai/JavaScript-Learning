@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">这是一个盒子</div>
+    <span class="sp"></span>
+    <script>
+      // .innerText
+      // 获取元素
+      const div = document.querySelector(".box");
+      // 获取文字内容
+      console.log(div.innerText);
+      // 修改文字内容
+      div.innerText = "修改后文字内容";
+
+      // .innerHTML
+      // 获取元素
+      const span = document.querySelector(".sp");
+      // 解析标签
+      span.innerHTML = "<strong>加粗标签</strong>";
+    </script>
+  </body>
+</html>

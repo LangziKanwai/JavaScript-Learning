@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 简单数据类型
+      let num1 = 20;
+      let num2 = num1;
+      num2 = 40;
+
+      // 20
+      console.log(num1);
+      // 40
+      console.log(num2);
+
+      // 引用数据类型
+      let obj1 = {
+        age: 20,
+      };
+      // obj2 实际存储的为地址，指向 obj1 在堆里的实例
+      let obj2 = obj1;
+      // 修改的实际是堆空间内的数据
+      obj2.age = 30;
+
+      // 30
+      console.log(obj1.age);
+      // 30
+      console.log(obj2.age);
+    </script>
+  </body>
+</html>

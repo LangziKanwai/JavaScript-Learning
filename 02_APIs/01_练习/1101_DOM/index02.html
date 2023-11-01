@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="nav"></div>
+
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+
+    <span id="sp"></span>
+
+    <script>
+      // 获取第一个 div
+      const box = document.querySelector("div");
+
+      // 获取类名为 nav 的 div
+      const nav = document.querySelector(".nav");
+
+      // 获取 ul 内的第二个 li
+      const li = document.querySelector("ul li:nth-child(2)");
+      console.log(li);
+
+      // 获取所有的 div
+      const allDiv = document.querySelectorAll("div");
+      console.log(allDiv);
+
+      // 获取 ul 里的所有 li
+      const allLi = document.querySelectorAll("ul li");
+      console.log(allLi);
+
+      // 遍历获取到的所有 li 的 nodelist
+      for (let i = 0; i < allLi.length; i++) {
+        console.log(allLi[i]);
+      }
+
+      // 其他获取 DOM 元素的方法
+      // 根据元素 ID
+      document.getElementById("sp");
+
+      // 根据元素类名
+      document.getElementsByClassName("nav");
+
+      // 根据标签名
+      document.getElementsByTagName("div");
+    </script>
+  </body>
+</html>

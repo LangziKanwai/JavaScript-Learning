@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 接收布尔类型参数，表示颜色格式为十六进制还是 rgb 格式
+      function getRandomColor(check = false) {
+        let colorStr = "";
+        // 十六进制
+        if (check == false) {
+          let color = "#";
+          let arr = [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+          ];
+          for (let i = 1; i <= 6; i++) {
+            color += `${arr[Math.floor(Math.random() * 15)]}`;
+          }
+          colorStr = color;
+        }
+        // rgb
+        else {
+          let color = "rgb(";
+          for (let i = 1; i <= 3; i++) {
+            if (i <= 2) {
+              color += `${Math.floor(Math.random() * 256)},`;
+            } else {
+              color += `${Math.floor(Math.random() * 256)})`;
+            }
+          }
+          colorStr = color;
+        }
+        return colorStr;
+      }
+
+      let boolen = +prompt("请输入需要转换的格式 false.十六进制 true.rgb");
+      if (boolen == 0) {
+        boolen = false;
+        document.write(
+          `<div style="height: 100vh; background-color:${getRandomColor(
+            boolen
+          )} ;"></div>`
+        );
+        temp = false;
+      } else {
+        boolen = true;
+        document.write(
+          `<div style="height: 100vh; background-color:${getRandomColor(
+            boolen
+          )} ;"></div>`
+        );
+        temp = false;
+      }
+    </script>
+  </body>
+</html>
