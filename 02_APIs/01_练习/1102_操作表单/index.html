@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" value="请输入文本" />
+    <input type="checkbox" name="" id="checkbox1" />
+    <button disabled="disabled">点击</button>
+    <script>
+      // 获取 input 元素
+      const input = document.querySelector(`[type="text"]`);
+
+      // 获取 value 值
+      console.log(input.value);
+
+      // 设置新值
+      input.value = "新的文本";
+
+      // 获取 checkbox 元素
+      const checkbox = document.querySelector("#checkbox1");
+
+      // false 未选中
+      console.log(checkbox.checked);
+
+      // 使其选中
+      checkbox.checked = true;
+      console.log(checkbox.checked);
+
+      // 获取 button
+      const button = document.querySelector("button");
+
+      // 使按钮可点击，即不禁用
+      button.disabled = false;
+    </script>
+  </body>
+</html>

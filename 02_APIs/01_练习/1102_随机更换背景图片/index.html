@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: url("images/desktop_1.jpg") no-repeat top center / cover;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // 随机函数
+      let random = Math.floor(Math.random() * 10 + 1);
+
+      // 获取 body 对象
+      document.body.style.backgroundImage = `url("images/desktop_${random}.jpg")`;
+    </script>
+  </body>
+</html>

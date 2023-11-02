@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 自定义属性 -->
+    <div date-id="1" data-check="checked">1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+    <script>
+      // 获取 div 元素
+      const first = document.querySelector("div");
+
+      // 获取自定义属性
+      console.log(first.dataset);
+    </script>
+  </body>
+</html>

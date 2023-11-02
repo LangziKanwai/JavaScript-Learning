@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <script>
+      const box1 = document.querySelector(".box1");
+      // 对象.style.属性 = 值
+      // 新值中要包含 CSS 单位
+      box1.style.width = "500px";
+      // 属性名中若有 - 则使用小驼峰命名法省略 -
+      box1.style.backgroundColor = "green";
+      // 新增属性
+      box1.style.borderTop = "2px solid blue";
+    </script>
+  </body>
+</html>

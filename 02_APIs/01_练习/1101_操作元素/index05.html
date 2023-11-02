@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 300px;
+      }
+
+      /* 需要切换的类 */
+      .box-other {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 200px;
+        font-size: 30px;
+      }
+
+      /* 追加的样式 */
+      .box-color {
+        margin: 200px auto;
+        color: red;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">123456</div>
+    <script>
+      // 获取对象
+      const divBox = document.querySelector(".box");
+
+      // 追加 .box-color 类
+      divBox.classList.add("box-color");
+
+      // 删除 .box 类
+      divBox.classList.remove("box");
+
+      // 切换 .box-other 类，即有就删除，没有就追加
+      // 没有 .box-other 类，追加
+      divBox.classList.toggle("box-other");
+
+      // 有 .box 类，删除
+      divBox.classList.toggle("box");
+    </script>
+  </body>
+</html>
