@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .base {
+        width: 500px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 200px auto;
+        position: relative;
+      }
+
+      .close {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="base"><button class="close">点击关闭</button></div>
+    <script>
+      // 获取对象
+      const base = document.querySelector(".base");
+      const close = document.querySelector(".close");
+
+      // 监听单击事件
+      close.addEventListener("click", function () {
+        base.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

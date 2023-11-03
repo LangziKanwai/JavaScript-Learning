@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .box {
+        width: 600px;
+        margin: 50px auto;
+        display: flex;
+        font-size: 25px;
+        line-height: 40px;
+      }
+
+      .qs {
+        width: 450px;
+        height: 40px;
+        color: red;
+      }
+
+      .btns {
+        text-align: center;
+      }
+
+      .btns button {
+        width: 120px;
+        height: 35px;
+        margin: 0 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>随机点名</h2>
+    <div class="box">
+      <span>名字是：</span>
+      <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+      <button class="start">开始</button>
+      <button class="end" disabled="disabled">结束</button>
+    </div>
+    <script>
+      // 数据数组
+      const arr = ["马超", "黄忠", "赵云", "关羽", "张飞"];
+
+      // 获取元素对象
+      const start = document.querySelector(".start");
+      const end = document.querySelector(".end");
+      const qs = document.querySelector(".qs");
+
+      // 定义计时器的全局变量
+      let timeID;
+
+      // 全局的随机数
+      let random;
+
+      // 点击事件
+      start.addEventListener("click", function () {
+        timeID = setInterval(function () {
+          // 随机抽取数组中的数据
+          random = Math.floor(Math.random() * arr.length);
+          qs.innerHTML = arr[random];
+        }, 80);
+
+        // 禁用开始按钮
+        start.disabled = true;
+        // 解除结束按钮禁用
+        end.disabled = false;
+
+        // 判断数组内剩余数据，若只剩一个数据则禁用所有按钮
+        if (arr.length == 1) {
+          start.disabled = true;
+          end.disabled = true;
+        }
+      });
+      end.addEventListener("click", function () {
+        // 恢复按钮禁用
+        end.disabled = true;
+        // 解除开始禁用
+        start.disabled = false;
+        clearInterval(timeID);
+        arr.splice(random, 1);
+      });
+    </script>
+  </body>
+</html>

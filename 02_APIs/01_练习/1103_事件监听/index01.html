@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        margin-top: 200px;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">弹窗按钮</button>
+    <div class="box">这是一个盒子</div>
+    <script>
+      // 获取对象
+      const button = document.querySelector(".btn");
+      const div = document.querySelector(".box");
+
+      // 监听按钮的点击事件
+      button.addEventListener("click", function () {
+        alert("按钮已被点击！");
+      });
+
+      // 监听盒子的鼠标经过事件
+      div.addEventListener("mouseover", function () {
+        div.style.backgroundColor = "skyblue";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin: 200px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      // 获取元素对象
+      const div = document.querySelector(".box");
+
+      // 鼠标经过事件
+      div.addEventListener("mouseenter", function () {
+        div.style.backgroundColor = "skyblue";
+        div.innerHTML = "鼠标经过！<br>";
+      });
+
+      // 鼠标离开
+      div.addEventListener("mouseleave", function () {
+        div.style.backgroundColor = "red";
+        div.innerHTML = "鼠标离开！<br>";
+      });
+    </script>
+  </body>
+</html>

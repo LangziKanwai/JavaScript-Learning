@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        box-sizing: border-box;
+        padding: 0px 20px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">我已阅读此协议 (5)</button>
+    <script>
+      // 获取元素
+      const button = document.querySelector(".btn");
+
+      // 禁用按钮
+      button.disabled = true;
+
+      // 倒计时
+      let i = 5;
+
+      // 开启定时器
+      let n = setInterval(function () {
+        i--;
+        button.innerHTML = `我已阅读此协议 (${i}s)`;
+        if (i == 0) {
+          clearInterval(n);
+          button.innerHTML = "我已阅读此协议并同意";
+          // 解禁按钮
+          button.disabled = false;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
