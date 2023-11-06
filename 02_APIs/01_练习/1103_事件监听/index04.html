@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <script>
+      const input = document.querySelector("input");
+
+      // 获取焦点
+      input.addEventListener("focus", function () {
+        console.log("输入框被触发！");
+      });
+
+      // 失去焦点
+      input.addEventListener("blur", function () {
+        console.log("输入框失去焦点！");
+      });
+
+      // 键盘按下
+      input.addEventListener("keydown", function () {
+        console.log("键盘按下！");
+      });
+
+      // 键盘抬起
+      input.addEventListener("keyup", function () {
+        console.log("键盘弹起！");
+      });
+
+      // 文本事件
+      input.addEventListener("input", function () {
+        console.log("用户输入内容！");
+        // 打印用户输入的内容
+        console.log(input.value);
+      });
+    </script>
+  </body>
+</html>

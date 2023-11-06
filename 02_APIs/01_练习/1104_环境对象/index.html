@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点击按钮</button>
+    <script>
+      // this 指向 window
+      console.log(this);
+
+      // 获取对象
+      const btn = document.querySelector("button");
+
+      // 点击事件
+      btn.addEventListener("click", function () {
+        // this 指向 button
+        // this 指向调用它的对象
+        console.log(this);
+        // 直接使用 this 进行修改
+        this.style.backgroundColor = "skyblue";
+        this.style.border = "1px solid black";
+      });
+    </script>
+  </body>
+</html>
