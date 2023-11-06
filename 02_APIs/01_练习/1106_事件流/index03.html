@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .base {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+      }
+
+      .father {
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+      }
+
+      .child {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="base">
+      <div class="father">
+        <div class="child"></div>
+      </div>
+    </div>
+    <script>
+      // 获取对象
+      const base = document.querySelector(".base");
+      const father = document.querySelector(".father");
+      const child = document.querySelector(".child");
+
+      // 启用事件冒泡
+      // 当一个元素触发事件后，会依次向上调用所有父级元素的同名事件
+      base.addEventListener("click", function () {
+        console.log("base");
+      });
+      father.addEventListener("click", function () {
+        console.log("father");
+      });
+      child.addEventListener("click", function (e) {
+        console.log("child");
+        // 阻止流动传播，即阻止冒泡
+        e.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

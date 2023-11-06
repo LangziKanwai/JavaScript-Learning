@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>111</li>
+      <li>222</li>
+      <li>333</li>
+      <li>444</li>
+      <li>555</li>
+      <p>ppp</p>
+    </ul>
+    <script>
+      // 点击每个 li 使当前 li 变为红色
+      // 获得父级对象
+      const ul = document.querySelector("ul");
+
+      // 注册父级的点击事件，同时获取事件对象 e
+      ul.addEventListener("click", function (e) {
+        console.log(e);
+        // 获取点击的对象，但此时获取到的是点击的对象
+        console.log(e.target);
+        // 修改点击对象的样式
+        // e.target.style.color = "red";
+
+        // 若想使 p 标签点击时不受影响，则需要只获取可以触发事件的元素
+        if (e.target.tagName === "LI") {
+          e.target.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
