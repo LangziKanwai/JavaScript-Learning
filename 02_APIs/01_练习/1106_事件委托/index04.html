@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 表单 -->
+    <form action="#">
+      <!-- 默认情况下点击会提交表单 -->
+      <input type="submit" value="注册" />
+    </form>
+    <script>
+      // 获取表单对象
+      const form = document.querySelector("form");
+      // 注册提交事件
+      form.addEventListener("submit", function (e) {
+        // 阻止默认行为：提交
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

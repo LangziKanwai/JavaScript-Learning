@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      // 页面窗口大小发生变化时触发的事件
+      window.addEventListener("resize", function () {
+        console.log("窗口改变");
+      });
+
+      // 检测屏幕属性
+      const div = document.querySelector("div");
+      // 获取元素宽高，不包含边框
+      console.log(div.clientWidth);
+      console.log(div.clientHeight);
+    </script>
+  </body>
+</html>

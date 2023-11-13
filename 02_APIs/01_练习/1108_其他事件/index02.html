@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 等待页面的 DOM 资源加载完毕
+      window.addEventListener("DOMContentLoaded", function () {
+        // 获取对象
+        const btn = document.querySelector("button");
+        // 添加事件
+        btn.addEventListener("click", function () {
+          alert("点击事件");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>点击</button>
+  </body>
+</html>
