@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        margin: 100px;
+        background-color: skyblue;
+        position: relative;
+      }
+
+      div p {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p></p>
+    </div>
+    <script>
+      // 获取 div
+      const div = document.querySelector("div");
+      // 获取相对位置
+      console.log(div.offsetLeft);
+      console.log(div.offsetTop);
+
+      // 获取 p
+      const p = document.querySelector("p");
+      // 获取相对于 div 的位置
+      console.log(p.offsetLeft);
+      console.log(p.offsetTop);
+    </script>
+  </body>
+</html>
