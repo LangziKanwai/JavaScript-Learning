@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="base">
+      <div class="box"></div>
+    </div>
+    <ul>
+      <li><p>1</p></li>
+      <li>2</li>
+      <li><div>3</div></li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <script>
+      // 父节点
+      // 获取 box
+      const box = document.querySelector(".box");
+      // 通过父级节点查找父级
+      const base = box.parentNode;
+      console.log(base);
+
+      // 子节点
+      // 获取 ul
+      const ul = document.querySelector("ul");
+      // 获取所有的子节点
+      const list = ul.children;
+      console.log(list);
+
+      // 兄弟节点
+      // 选择第二个 li
+      const li2 = document.querySelector("ul li:nth-child(2)");
+      // 上一个兄弟
+      const li1 = li2.previousElementSibling;
+      // 下一个兄弟
+      const li3 = li2.nextElementSibling;
+      console.log(li1);
+      console.log(li3);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        box-sizing: border-box;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        margin: 200px auto;
+        text-align: center;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"><span></span></div>
+    <script>
+      const sp = document.querySelector("span");
+      // 定时器
+      setInterval(() => {
+        // 实例化
+        // 得到当前时间
+        const date1 = new Date();
+        console.log(date1);
+
+        // 得到指定时间
+        const date2 = new Date("2022-5-1");
+        console.log(date2);
+
+        // 方法
+        // 获得年份 对象.getFullYear()
+        console.log(date1.getFullYear());
+        // 获得月份，取值为0-11 对象.getMonth()+1
+        console.log(date1.getMonth() + 1);
+        // 获得月份中的每一天 对象.getDate()
+        console.log(date1.getDate());
+        // 获得星期，取值为0-6，星期天为0 对象.getDay()
+        console.log(date1.getDay());
+        // 获得小时，取值为0-23 对象.getHours()
+        console.log(date1.getHours());
+        // 获得分钟，取值为0-59 对象.getMinutes()
+        console.log(date1.getMinutes());
+        // 获得秒，取值为0-59 对象.getSeconds()
+        console.log(date1.getSeconds());
+
+        // 以 YYYY-MM-DD HH:mm 显示
+        let dateStr =
+          date1.getFullYear() +
+          "-" +
+          (date1.getMonth() + 1) +
+          "-" +
+          date1.getDate() +
+          " " +
+          date1.getHours() +
+          ":" +
+          date1.getMinutes() +
+          ":" +
+          date1.getSeconds();
+        // sp.innerHTML = dateStr;
+        // 其他方式
+        sp.innerHTML = date1.toLocaleDateString(); // 2023/11/16
+        sp.innerHTML = date1.toLocaleTimeString(); // 15:01:01
+        sp.innerHTML =
+          date1.toLocaleDateString() + " " + date1.toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>

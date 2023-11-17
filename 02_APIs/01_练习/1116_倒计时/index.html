@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .countdown {
+        width: 240px;
+        height: 305px;
+        text-align: center;
+        line-height: 1;
+        color: #fff;
+        background-color: brown;
+        /* background-size: 240px; */
+        /* float: left; */
+        overflow: hidden;
+      }
+
+      .countdown .next {
+        font-size: 16px;
+        margin: 25px 0 14px;
+      }
+
+      .countdown .title {
+        font-size: 33px;
+      }
+
+      .countdown .tips {
+        margin-top: 80px;
+        font-size: 23px;
+      }
+
+      .countdown small {
+        font-size: 17px;
+      }
+
+      .countdown .clock {
+        width: 142px;
+        margin: 18px auto 0;
+        overflow: hidden;
+        display: flex;
+      }
+
+      .countdown .clock span,
+      .countdown .clock i {
+        display: block;
+        text-align: center;
+        line-height: 34px;
+        font-size: 23px;
+        float: left;
+      }
+
+      .countdown .clock span {
+        box-sizing: content-box;
+        /* width: 34px; */
+        height: 34px;
+        border-radius: 2px;
+        background-color: #303430;
+      }
+
+      .countdown .clock i {
+        width: 20px;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="countdown">
+      <p class="next"></p>
+      <p class="title">毕业倒计时</p>
+      <p class="clock">
+        <span id="day"></span>
+        <i>:</i>
+        <span id="hour"></span>
+        <i>:</i>
+        <span id="minutes"></span>
+        <i>:</i>
+        <span id="scond"></span>
+      </p>
+      <p class="tips">2025/6/15 毕业</p>
+    </div>
+    <script>
+      // 定时器
+      setInterval(() => {
+        const date = new Date();
+        // 今天
+        const next = document.querySelector(".next");
+        next.innerHTML = `今天是：${date.toLocaleDateString()}`;
+        // 现在时间戳
+        const now = +new Date();
+        // 将来时间戳
+        const will = +new Date("2025-6-15");
+        // 得到剩余的时间戳，并转换为秒数
+        const count = (will - now) / 1000;
+        // 转换并补零
+        d = parseInt(count / 60 / 60 / 24); // 计算天数
+        d = d < 10 ? "0" + d : d;
+        h = parseInt((count / 60 / 60) % 24); // 计算小时
+        h = h < 10 ? "0" + h : h;
+        m = parseInt((count / 60) % 60); // 计算分数
+        m = m < 10 ? "0" + m : m;
+        s = parseInt(count % 60); // 计算秒数
+        s = s < 10 ? "0" + s : s;
+        // 获取各个对象
+        const day = document.querySelector("#day");
+        const hour = document.querySelector("#hour");
+        const minutes = document.querySelector("#minutes");
+        const scond = document.querySelector("#scond");
+        day.innerHTML = d;
+        hour.innerHTML = h;
+        minutes.innerHTML = m;
+        scond.innerHTML = s;
+        console.log(h);
+      }, 1000);
+    </script>
+  </body>
+</html>
