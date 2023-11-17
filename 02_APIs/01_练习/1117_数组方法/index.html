@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 定义数组
+      const arr = ["red", "blue", "green"];
+
+      // 使用 map 遍历
+      const newArr1 = arr.map(function (ele, index) {
+        console.log(ele);
+        console.log(index);
+        return ele + "颜色";
+      });
+      console.log(newArr1);
+
+      // 使用 join 拼接
+      // 参数为分割符号，此时以 , 分割
+      const newArr2 = arr.join(",");
+      console.log(newArr2);
+    </script>
+  </body>
+</html>

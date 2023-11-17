@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.baidu.com"><span>6</span>秒后跳转百度</a>
+    <script>
+      // 获取元素
+      const a = document.querySelector("a");
+      // 声明倒计时变量
+      let num = 6;
+      // 开启定时器
+      let timer = setInterval(() => {
+        num--;
+        a.innerHTML = `<span>${num}</span>秒后跳转百度`;
+        if (num == 0) {
+          clearInterval(timer);
+          location.href = "http://www.baidu.com";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
