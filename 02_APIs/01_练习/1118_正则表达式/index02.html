@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 边界符
+      // 以哈开头
+      console.log(/^哈/.test("哈Ha哈")); // true
+      // 以哈开头结尾
+      console.log(/^哈$/.test("哈")); // true
+      // 以 ^ $ 开头结尾表示精确匹配
+      console.log(/^哈$/.test("哈哈")); // false
+
+      // 量词
+      console.log(/^哈$/.test("哈")); // true
+      // * 重复零次或更多次，只允许匹配字符重复
+      console.log(/^哈*$/.test("哈哈哈哈哈")); // true
+      // + 重复一或更多次
+      console.log(/^哈+$/.test("")); // false
+      // ? 重复零或一次
+      console.log(/^哈+$/.test("")); // true
+      // {n} 重复 n 次
+      console.log(/^哈{2}$/.test("哈哈哈")); // false
+      console.log(/^哈{2}$/.test("哈哈")); // true
+      // {n,} 重复 n 次或更多次
+      console.log(/^哈{2,}$/.test("哈哈哈")); // true
+      console.log(/^哈{2,}$/.test("哈哈")); // true
+      console.log(/^哈{2,}$/.test("哈")); // false
+      // {n,m} 重复 n 到 m 次
+      console.log(/^哈{2,5}$/.test("哈哈")); // true
+      console.log(/^哈{2,5}$/.test("哈哈哈哈哈哈哈")); // false
+
+      // 字符类
+      // [] 匹配字符集合，只匹配到一个
+      console.log(/[abc]/.test("baby")); // true
+      console.log(/[abc]/.test("no")); // false
+      console.log(/^[abc]$/.test("a")); // true
+      console.log(/^[abc]$/.test("b")); // true
+      console.log(/^[abc]$/.test("c")); // true
+      console.log(/^[abc]$/.test("ab")); // false
+      // [a-z] 匹配 a 至 z 的字符，只选取一个
+      console.log(/^[a-z]$/.test("c")); // true
+      console.log(/^[A-Z]$/.test("A")); // true
+      console.log(/^[0-9]$/.test(2)); // true
+      // 英文大小写字母和数字
+      console.log(/^[a-zA-Z0-9]$/.test(2)); // true
+      console.log(/^[a-zA-Z0-9]$/.test("P")); // true
+      // [^] 代表取反，如 [^a-z] 代表匹配除小写字母以外的字符
+    </script>
+  </body>
+</html>

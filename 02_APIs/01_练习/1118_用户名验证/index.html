@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <span></span>
+    <script>
+      const text = document.querySelector('[type="text"]');
+      const sp = text.nextElementSibling;
+      // 正则
+      const reg = /^[a-zA-Z0-9-_]{6,16}$/;
+      text.addEventListener("blur", function () {
+        if (reg.test(this.value)) {
+          sp.innerHTML = "输入正确";
+          sp.style.color = "green";
+        } else {
+          sp.innerHTML = "输入不合法";
+          sp.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

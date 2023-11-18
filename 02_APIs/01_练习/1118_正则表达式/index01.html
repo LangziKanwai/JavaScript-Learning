@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const str = "我们在学习前端，希望学习前端获得知识。";
+
+      // 定义规则
+      const reg = /前端/;
+
+      // 查找
+      console.log(reg.test(str));
+
+      // 查找符合规则的字符串
+      console.log(reg.exec(str));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <div></div>
+    <script>
+      const tx = document.querySelector("textarea");
+      const bt = tx.nextElementSibling;
+      const div = bt.nextElementSibling;
+      bt.addEventListener("click", function () {
+        div.innerHTML = tx.value.replace(/牛逼|nb/gi, "**");
+      });
+    </script>
+  </body>
+</html>

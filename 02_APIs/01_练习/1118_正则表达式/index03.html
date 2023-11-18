@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(/^java$/.test("java")); // true
+      console.log(/^java$/.test("JAVA")); // false
+      // 不区分大小写
+      console.log(/^java$/i.test("JAVA")); // true
+      console.log(/^java$/i.test("Java")); // true
+
+      // 字符串.replace(/正则表达式/, "替换的文本")
+      const str = "java是一门编程语言";
+      const result = str.replace(/java/i, "python");
+      console.log(result);
+    </script>
+  </body>
+</html>

@@ -129,9 +129,110 @@
           <th>操作</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <!-- <tr>
+          <td>1</td>
+          <td>张三</td>
+          <td>20</td>
+          <td>女</td>
+          <td>12000</td>
+          <td>北京</td>
+          <td><a href="javascript:">删除</a></td>
+        </tr> -->
+      </tbody>
     </table>
     <!-- JS -->
-    <script></script>
+    <script>
+      // 严格模式
+      "use strict";
+      // 页面加载完毕后执行
+      window.addEventListener("load", function () {
+        // 获取对象
+        const tbody = document.querySelector("tbody");
+        const uname = document.querySelector(".uname");
+        const age = document.querySelector(".age");
+        const gender = document.querySelector(".gender");
+        const salary = document.querySelector(".salary");
+        const city = document.querySelector(".city");
+
+        // 测试数据
+        const initData = {
+          stuId: 1,
+          uname: "张三",
+          age: 20,
+          gender: "女",
+          salary: "12000",
+          city: "北京",
+        };
+        // 添加测试数据到本地
+        // localStorage.setItem("data", JSON.stringify(initData));
+
+        // 渲染页面ee
+        // 读取本地数据，若本地存在数据则转换为对象存储到变量内，否则用空数组代替
+        const arr = JSON.parse(localStorage.getItem("data")) || [];
+        // console.log(arr);
+
+        // 根据数组数据渲染页面，遍历数组生成 td 填充数据追击给 tbody
+        // 封装函数
+        function render() {
+          // 使用 map 遍历数据
+          const trArr = arr.map(function (ele, index) {
+            return `
+            <tr>
+            <td>${ele.stuId}</td>
+            <td>${ele.uname}</td>
+            <td>${ele.age}</td>
+            <td>${ele.gender}</td>
+            <td>${ele.salary}</td>
+            <td>${ele.city}</td>
+            <td><a href="javascript:" data-id="${index}">删除</a></td>
+            </tr>`;
+          });
+          // 转化为字符串后追加给 tbody
+          tbody.innerHTML = trArr.join("");
+        }
+        render();
+
+        // 表单提交模块
+        const info = document.querySelector(".info");
+        info.addEventListener("submit", function (e) {
+          // 禁止默认行为
+          e.preventDefault();
+          // 非空判断
+          if (!uname.value || !age.value || !salary.value) {
+            return alert("输入内容不能为空！请检查！");
+          }
+          // 新增信息，给 arr 追加对象，存储从表单获得的数据
+          arr.push({
+            stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+            uname: uname.value,
+            age: age.value,
+            gender: gender.value,
+            salary: salary.value,
+            city: city.value,
+          });
+          // 渲染页面
+          info.reset();
+          render();
+          // 将数组数据转化为 JSON 字符串存储到本地存储内
+          localStorage.setItem("data", JSON.stringify(arr));
+        });
+
+        // 删除业务
+        tbody.addEventListener("click", function (e) {
+          if (e.target.tagName == "A") {
+            // 确定弹窗
+            if (confirm("确定删除？")) {
+              // 根据 data-id 删除
+              arr.splice(e.target.dataset.id, 1);
+              // 重新渲染
+              render();
+              // 将删除后的数据存入本地存储
+              localStorage.setItem("data", JSON.stringify(arr));
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
