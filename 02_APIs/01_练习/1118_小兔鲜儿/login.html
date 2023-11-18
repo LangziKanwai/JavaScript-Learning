@@ -98,10 +98,21 @@
     </div>
     <script>
       const tab_nav = document.querySelector(".tab-nav");
+      const tab_pane = document.querySelectorAll(".tab-pane");
       tab_nav.addEventListener("click", function (e) {
         if (e.target.tagName === "A") {
+          // 事件委托，移除显示的 active
           tab_nav.querySelector(".active").classList.remove("active");
+          // 使点击的获得 active
           e.target.classList.add("active");
+
+          // 隐藏全部
+          for (let i = 0; i < tab_pane.length; i++) {
+            console.log(tab_pane[i]);
+            tab_pane[i].style.display = "none";
+          }
+          // 使对应序号的 pane 显示
+          tab_pane[e.target.dataset.id].style.display = "block";
         }
       });
     </script>
