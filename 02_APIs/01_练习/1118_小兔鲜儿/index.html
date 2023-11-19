@@ -1203,5 +1203,30 @@
         </div>
       </div>
     </div>
+    <script>
+      // 获得第一个 li
+      const li1 = document.querySelector(".xtx_navs li:first-child");
+      const li2 = li1.nextElementSibling;
+      // 渲染函数
+      function render() {
+        // 读取本地存储的用户名
+        const uname = localStorage.getItem("uname");
+        if (uname) {
+          li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user">${uname}</i></a>`;
+          li2.innerHTML = `<a href="javascript:;">退出登录</a>`;
+        } else {
+          li1.innerHTML = `<li><a href="./login.html">请先登录</a></li>`;
+          li2.innerHTML = `<li><a href="./register.html">免费注册</a></li>`;
+        }
+      }
+      render();
+
+      li2.addEventListener("click", function () {
+        // 删除本地存储的数据
+        localStorage.removeItem("uname");
+        // 重新渲染
+        render();
+      });
+    </script>
   </body>
 </html>

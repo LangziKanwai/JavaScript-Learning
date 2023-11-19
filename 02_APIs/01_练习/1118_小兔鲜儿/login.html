@@ -115,6 +115,22 @@
           tab_pane[e.target.dataset.id].style.display = "block";
         }
       });
+
+      // 提交模块
+      const form = document.querySelector("form");
+      const agree = document.querySelector('[name="agree"]');
+      const uname = document.querySelector('[name="username"]');
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!agree.checked) {
+          alert("请勾选协议！");
+        } else {
+          // 记录用户名到本地存储
+          localStorage.setItem("uname", uname.value);
+          // 跳转到首页
+          location.href = "./index.html";
+        }
+      });
     </script>
   </body>
 </html>
