@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // this
+      // 此 this 指向 window
+      console.log(this);
+
+      function fn1() {
+        // 此 this 指向 window
+        // window 调用 fn1 所以 this 指向 window
+        console.log(this);
+      }
+      window.fn1();
+
+      const obj1 = {
+        name: "zhangsan",
+        fn: function () {
+          // 此 this 指向 obj
+          console.log(this);
+        },
+      };
+      obj1.fn();
+
+      const fn2 = () => {
+        // this 指向作用域链的上一层，在此处即为 window
+        console.log(this);
+      };
+      fn2();
+
+      const obj2 = {
+        name: "lisi",
+        fn: function () {
+          const fn = () => {
+            // 此时的 this 指向上一层即为 obj2.fn 的 this 即为 obj2
+            console.log(this);
+          };
+          fn();
+        },
+      };
+      obj2.fn();
+    </script>
+  </body>
+</html>

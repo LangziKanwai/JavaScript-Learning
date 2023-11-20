@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 统计函数调用次数
+      function fn() {
+        let i = 0;
+        function fun() {
+          i++;
+          console.log(i);
+        }
+        return fun;
+      }
+      const f = fn();
+      f(); // 1
+      f(); // 2
+      f(); // 3
+      f(); // 4
+      f(); // 5
+    </script>
+  </body>
+</html>

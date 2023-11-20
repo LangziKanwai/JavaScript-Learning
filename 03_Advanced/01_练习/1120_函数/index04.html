@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 箭头函数
+      const fn1 = () => {
+        console.log(123);
+      };
+      fn1();
+      const fn2 = (x) => {
+        console.log(x);
+      };
+      fn2(5);
+      // 箭头函数只有一个参数时括号可以省略
+      const fn3 = (x) => {};
+      // 只有一行代码时可以省略大括号
+      const f4 = (x) => console.log(x);
+      // 有返回值可直接返回
+      const f5 = (x) => x + x;
+      // 直接返回一个对象
+      const f6 = (x) => ({
+        a: 1,
+        b: 1,
+      });
+    </script>
+  </body>
+</html>
