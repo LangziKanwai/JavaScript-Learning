@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组解构
+      const arr1 = [100, 200, 300];
+      const [a, b, c] = arr1;
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      // 交换变量
+      let num1 = 10;
+      let num2 = 30;
+      [num1, num2] = [num2, num1];
+      console.log(num1);
+      console.log(num2);
+
+      // 防止 undefined
+      const arr2 = [100, 200];
+      // 设置默认值
+      const [d = 0, e = 0, f = 0] = arr2;
+
+      // 按需导入赋值
+      const [g, h, , i] = [1, 2, 3, 4]; // g:1 h:2 i:4
+    </script>
+  </body>
+</html>

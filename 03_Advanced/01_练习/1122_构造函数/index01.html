@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // new Object 创建对象
+      const o = new Object({ name: "zhangsan" });
+
+      // 构造函数
+      function Person(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+      }
+
+      const Zhangsan = new Person("zhangsan", 20, "男");
+      const Lisi = new Person("lisi", 19, "女");
+      const Wangwu = new Person("wangwu", 20, "男");
+    </script>
+  </body>
+</html>

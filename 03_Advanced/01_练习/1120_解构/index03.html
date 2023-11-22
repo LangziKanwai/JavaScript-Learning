@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 对象解构
+      const obj = {
+        name: "zhangsan",
+        age: 18,
+      };
+      // 解构
+      // 等价于 const name = obj.name
+      const { name, age } = obj;
+      // 对象解构的变量名可以改名
+      const { name: userName, age: userAge } = obj;
+    </script>
+  </body>
+</html>

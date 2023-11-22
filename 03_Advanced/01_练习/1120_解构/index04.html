@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 数组对象解构
+      const objArr = [{ age: 18 }, { age: 20 }];
+      // 解构
+      const [{ age }, { age: uAge }] = objArr;
+
+      // 多级对象解构
+      const obj = {
+        a: "a",
+        b: {
+          c: "c",
+          d: "d",
+        },
+      };
+      const {
+        a,
+        // 多级对象需要区分哪个对象进行解构
+        b: { c, d },
+      } = obj;
+    </script>
+  </body>
+</html>

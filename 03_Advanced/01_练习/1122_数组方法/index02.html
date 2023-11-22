@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [10, 20, 30, 40, 50, 60];
+      // 返回一个新数组
+      const newArr = arr.filter(function (item, index) {
+        // 筛选大于 30 的元素
+        return item >= 30;
+      });
+      console.log(newArr);
+    </script>
+  </body>
+</html>
