@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayHi = function () {
+          console.log("Hi~");
+        };
+      }
+
+      // 实例化对象
+      const zhangsan = new Person("zhangsan", 20);
+      const lisi = new Person("lisi", 20);
+
+      // 修改对象
+      lisi.walk = function walk() {
+        console.log("walking~");
+      };
+
+      // 调用对象方法
+      lisi.walk();
+
+      // 对象之间互不影响
+      console.log(zhangsan);
+      console.log(lisi);
+      console.log(zhangsan === lisi);
+
+      // 调用构造函数内的静态方法
+      zhangsan.sayHi();
+    </script>
+  </body>
+</html>

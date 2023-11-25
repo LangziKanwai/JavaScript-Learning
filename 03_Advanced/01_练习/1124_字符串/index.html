@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const str = "Hello,World!";
+
+      // split() 字符串切割，转换为数组
+      const arr1 = str.split(",");
+      console.log(arr1); // ['Hello', 'World!']
+
+      // substring(开始的索引号, 结束的索引号)
+      const newStr1 = str.substring(3, 6);
+      console.log(newStr1); // lo,
+
+      // startsWith(检测字符串[, 检测位置索引号]) 检测是否以某字符开头
+      console.log(str.startsWith("H")); // true
+      console.log(str.startsWith("h")); // false
+      console.log(str.startsWith("llo", 2)); // true
+
+      // inclouds(搜索的字符串[, 从哪里开始搜索])
+      console.log(str.includes("llo")); // true
+      console.log(str.includes("he", 3)); // false
+    </script>
+  </body>
+</html>

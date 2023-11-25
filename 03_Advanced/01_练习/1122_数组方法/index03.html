@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // reduce()
+      const arr = [20, 50, 30, 40, 55, 40];
+
+      // 无起始值
+      // prev 上一次的值
+      // cur 当前值
+      const res1 = arr.reduce(function (prev, cur) {
+        return prev + cur;
+      });
+      console.log(res1); // 235
+
+      // 有初始值，起始值为 10
+      const res2 = arr.reduce(function (prev, cur) {
+        return prev + cur;
+      }, 10);
+      console.log(res2); // 245
+    </script>
+  </body>
+</html>

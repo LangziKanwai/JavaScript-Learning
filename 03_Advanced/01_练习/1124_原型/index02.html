@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // 构造函数的原型
+      console.log(Person.prototype);
+
+      // 在原型对象上挂载函数
+      Person.prototype.getSum = function (num1, num2) {
+        return num1 + num2;
+      };
+      Person.prototype.sayHi = function () {
+        console.log("Hi~");
+      };
+
+      // 新建对象
+      const zhangsan = new Person("zhangsan", 20);
+
+      // 调用原型上的函数
+      console.log(zhangsan.getSum(20, 20));
+      zhangsan.sayHi();
+    </script>
+  </body>
+</html>

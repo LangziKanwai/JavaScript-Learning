@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Boy() {
+        this.sayHi = function () {
+          console.log("Hi~");
+        };
+      }
+      // 抽取公共，封装为构造函数
+      function Person() {
+        this.eyes = 2;
+        this.head = 1;
+      }
+      // 通过 new Person() 创建 Boy 的原型
+      Boy.prototype = new Person();
+      // 指回原来的构造函数
+      Boy.prototype.constructor = Boy;
+      const boy = new Boy();
+      console.log(boy);
+    </script>
+  </body>
+</html>

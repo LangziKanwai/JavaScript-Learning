@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <script>
+      // 获取 li
+      const lis = document.querySelectorAll("ul li");
+      // 伪数组
+      console.log(lis); // NodeList(3) [li, li, li]
+      // 伪数组无法使用 pop() 等方法，报错
+      // lis.pop();
+
+      // 通过静态方法转换为真数组
+      const newLis = Array.from(lis);
+      console.log(newLis); // [li, li, li]
+      // 转换后可以使用 pop() 等方法
+      newLis.pop();
+      console.log(newLis); // [li, li]
+    </script>
+  </body>
+</html>

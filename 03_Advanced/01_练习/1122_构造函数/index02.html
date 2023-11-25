@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数批量创建对象
+      function Goods(name, price, count) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+      }
+
+      // new
+      const pen = new Goods("pen", 2, 20);
+      const apple = new Goods("apple", 5, 10);
+
+      const arr = [];
+      arr.push(pen);
+      arr.push(apple);
+      console.log(arr);
+    </script>
+  </body>
+</html>

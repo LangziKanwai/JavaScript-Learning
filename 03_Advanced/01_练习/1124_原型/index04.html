@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 构造函数
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 构造函数的原型对象
+      console.log(Person.prototype);
+
+      // constructor 属性指向自己的构造函数
+      console.log(Person.prototype.constructor === Person); // true
+    </script>
+  </body>
+</html>

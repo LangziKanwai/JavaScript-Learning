@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const gift = "50g茶叶 清洗球";
+      // 字符串拆分成数组
+      const strArr = gift
+        .split(" ")
+        .map((item) => `<span>【赠品】${item}</span><br>`)
+        .join("");
+      console.log(strArr);
+      document.querySelector("div").innerHTML = strArr;
+    </script>
+  </body>
+</html>

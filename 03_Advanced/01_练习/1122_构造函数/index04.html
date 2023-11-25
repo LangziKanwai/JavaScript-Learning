@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Object
+      const obj1 = new Object({ name: "zhangsan", age: 20 });
+
+      // Object.keys()
+      const arr1 = Object.keys(obj1);
+      console.log(arr1);
+
+      // object.values()
+      const arr2 = Object.values(obj1);
+      console.log(arr2);
+
+      // Object.assign()
+      const obj2 = Object.assign(obj1);
+      Object.assign(obj2, { gender: "女" });
+      console.log(obj2);
+    </script>
+  </body>
+</html>
