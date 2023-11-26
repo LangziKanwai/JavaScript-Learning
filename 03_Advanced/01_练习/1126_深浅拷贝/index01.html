@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: "zhangsan",
+        age: 18,
+        hobby: {
+          run: "running",
+        },
+      };
+      console.log(obj.age); // 18
+      // 直接赋值，直接修改会影响原对象
+      const obj1 = obj;
+      obj1.age = 20;
+      console.log(obj.age); // 20
+      console.log(obj1.age); // 20
+
+      // 浅拷贝方法
+      const obj2 = {};
+      Object.assign(obj2, obj);
+      console.log(obj2); // don't run
+
+      const obj3 = { ...obj };
+      // 浅拷贝多层修改还会影响
+      obj3.hobby.run = "don't run";
+      console.log(obj3); // don't run
+    </script>
+  </body>
+</html>

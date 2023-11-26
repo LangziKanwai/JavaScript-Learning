@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        name: "zhangsan",
+        age: 20,
+      };
+
+      function fn() {
+        console.log(this);
+        if (arguments.length != 0) {
+          console.log(arguments);
+        }
+      }
+      fn(); // window
+
+      // call()
+      fn.call(obj); // this 指向 obj
+      fn.call(obj, 1, 2); // 参数 1 和 2
+
+      // apply(thisArg, [argsArray])
+      // thisArg 改变的 this 指向
+      // [argsArray] 实参数组
+      // 返回值为函数的返回值
+      fn.apply(obj); // this 指向 obj
+      fn.apply(obj, [1, 2, 5, 6, 7]);
+      // 使用场景：求数组内最大值
+      const arr = [5, 8, 0, 3, 4];
+      const max = Math.max.apply(Math, arr);
+      console.log(max);
+
+      // bind(thisArg, arg1, arg2, ...)
+      // thisArg 改变的 this 指向
+      // arg 为参数
+      // 返回值为修改 this 后的函数
+      const bindReturn = fn.bind(obj);
+      console.log(bindReturn);
+      bindReturn(); // this 指向 obj
+    </script>
+  </body>
+</html>

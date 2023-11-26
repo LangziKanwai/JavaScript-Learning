@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      function fn() {
+        // 自己调用自己，即为递归函数
+        fn();
+      }
+
+      // 用递归将延迟执行函数变为计时器
+      function getTime() {
+        document.querySelector("div").innerHTML = new Date().toLocaleString();
+        setTimeout(getTime, 1000);
+      }
+      getTime();
+    </script>
+  </body>
+</html>

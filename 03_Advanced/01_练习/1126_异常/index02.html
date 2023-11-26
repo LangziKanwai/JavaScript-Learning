@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>123</p>
+    <script>
+      function fn() {
+        try {
+          // 可能出现错误的代码
+          const p = querySelector("P");
+          p.style.color = "red";
+        } catch (err) {
+          // err 错误信息
+          debugger;
+          console.log(err.message);
+          throw new Error("错误");
+          // 不执行下列代码
+          return;
+        } finally {
+          // 无论程序是否错误都会执行的代码
+          alert("结束！");
+        }
+        console.log("test");
+      }
+      fn();
+    </script>
+  </body>
+</html>

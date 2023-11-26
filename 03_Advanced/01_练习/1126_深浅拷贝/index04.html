@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 引入库 -->
+    <!-- 在线库 -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.min.js"></script> -->
+    <script src="./js/lodash.min.js"></script>
+    <script>
+      const obj = {
+        name: "zhangsan",
+        age: 20,
+        hobby: ["乒乓球", "羽毛球"],
+        study: {
+          math: {
+            one: 50,
+            two: 60,
+          },
+          history: 40,
+        },
+      };
+
+      // lodash 拷贝
+      const newObj = _.cloneDeep(obj);
+
+      newObj.study.math.two = 90;
+      console.log(obj);
+      console.log(newObj);
+
+      // JSON 字符串拷贝
+      const objStr = JSON.stringify(obj);
+      console.log(objStr);
+      const newObj1 = JSON.parse(objStr);
+      console.log(newObj1);
+    </script>
+  </body>
+</html>

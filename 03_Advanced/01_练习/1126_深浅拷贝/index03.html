@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 递归实现深拷贝
+      const obj = {
+        name: "zhangsan",
+        age: 20,
+        hobby: ["乒乓球", "羽毛球"],
+        study: {
+          math: {
+            one: 50,
+            two: 60,
+          },
+          history: 40,
+        },
+      };
+      // 拷贝函数
+      function deepCopy(newObj, oldObj) {
+        for (const k in oldObj) {
+          // 处理对象内含数组的情况
+          if (oldObj[k] instanceof Array) {
+            // 令 newObj[k] 变为空数组，递归
+            newObj[k] = [];
+            deepCopy(newObj[k], oldObj[k]);
+          } else if (oldObj[k] instanceof Object) {
+            newObj[k] = {};
+            deepCopy(newObj[k], oldObj[k]);
+          } else {
+            // k 为属性名，oldObj[k] 为属性值
+            newObj[k] = oldObj[k];
+          }
+        }
+      }
+      const newObj = {};
+      deepCopy(newObj, obj);
+      console.log("obj:", obj);
+      console.log("newobj:", newObj);
+      console.log("obj === newObj:", obj === newObj);
+      newObj.hobby[1] = "篮球";
+      newObj.study.math.two = 40;
+      newObj.study.history = 60;
+      console.log("obj:", obj);
+      console.log("newobj:", newObj);
+    </script>
+  </body>
+</html>
